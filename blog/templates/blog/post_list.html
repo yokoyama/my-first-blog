@@ -1,14 +1,11 @@
-{% extends 'blog/base.html' %}
-<!-- base.htmlの指定blockに下記blockを挿入して表示する-->
-{% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                publised date :{{ post.published_date }}
-            </div>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <p>------------------------------------------------------------</p>
-        </div>
-    {% endfor %}
-{% endblock %}
+<div>
+    <h1><a href="/">Django Girls Blog12/11 19:33</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
